@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: service-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: function_route
+          uri: http://localhost:8060
+          predicates:
+            - Path=/a/**
+          filters:
+            - StripPrefix=1
+        - id: after_route
+          uri: http://localhost:8060
+          predicates:
+            - Path=/after/**
+            - After=2016-01-20T17:42:47.789-07:00[America/Denver]
+        - id: before_route
+          uri: http://localhost:8060
+          predicates:
+            - Path=/before/**
+            - Before=2020-01-20T17:42:47.789-07:00[America/Denver]
+server:
+  port: 8061
