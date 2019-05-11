@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: consul-provider
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        serviceName: consul-provider
+      config:
+        enabled: true
+        format: YAML
+        prefix: config
+        profile-separator: ':'
+        data-key: data
