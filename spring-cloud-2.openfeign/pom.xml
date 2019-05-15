@@ -16,8 +16,6 @@
     <description>Demo project for Spring Boot</description>
 
     <modules>
-        <module>consumer</module>
-        <module>provider</module>
     </modules>
 
     <properties>

@@ -1,0 +1,17 @@
+server:
+  port: 8051
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: full
+      storeClient:
+        url: localhost:8050
+  okhttp:
+    enabled: true
+logging:
+  level:
+    com.example.feignconsumer.common.StoreClient: debug
+
