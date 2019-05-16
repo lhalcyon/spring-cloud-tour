@@ -1,0 +1,23 @@
+server:
+  port: 8770
+spring:
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: lh-consumer
+  application:
+    name: lh-consumer
+feign:
+  okhttp:
+    enabled: true
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: full
+logging:
+  level:
+    com.example.consumer.GreetingClient: debug

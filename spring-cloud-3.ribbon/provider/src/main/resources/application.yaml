@@ -1,0 +1,15 @@
+
+server:
+  port: ${providerPort}
+spring:
+  profiles:
+    active: providerA
+  application:
+    name: ${providerName}
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: ${providerName}
+
